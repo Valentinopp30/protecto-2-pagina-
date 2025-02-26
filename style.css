@@ -1,0 +1,195 @@
+/* Estilo generales */
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo del header */
+
+.cabezera{
+    text-align: center;
+    background-color: beige;
+    border-bottom: solid black 2px;
+    height: 80px; 
+    padding: 20px;
+
+}
+
+h1{
+    font-family: "Archivo Black", serif;
+    font-size: 36px;
+}
+
+.subtitulo{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 20px
+}
+
+/* Estilos de link de navehacion  */
+
+.contenedor_link{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    border-bottom: solid black 2px;
+    
+}
+
+
+.contenedor_link li{
+    display: inline-block;
+    gap: 0 5px;
+}
+
+.contenedor_link a{
+    text-decoration: none; 
+    color: #333; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 18px; 
+    padding: 10px 15px; 
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0,3s ease;
+    
+}
+
+ul{
+    flex-direction: column;
+    list-style-type: none;
+}
+
+
+.contenedor_link a:hover{
+    color: blue;
+    text-decoration:  underline;
+}
+
+/* Estilo de la secition de prodcutos  */
+
+section{
+    background-color: beige;
+}
+
+
+.contenedor-productos{
+    min-height: 100vh; /* Para que ocupe todo el espacio disponible */   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    justify-items: center; 
+    align-items: start;
+    max-width: 1600px; 
+    margin: auto;   
+
+}
+
+.producto{
+    width: 100%;
+    max-width: 400px; /* Máximo ancho de cada producto */   
+    text-align: center;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: rgb(152, 152, 152)
+}
+
+.producto img{
+    width: 100%; /* Que ocupe todo el contenedor */
+    height: auto;
+    max-height: 200px; /* Ajustá este valor si querés imágenes más grandes o chicas */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto button {
+    margin-top: 10px; /* Espaciado entre la imagen y el botón */
+    width: 100%; /* Para que ocupe todo el ancho del contenedor */
+}
+
+
+/* Estilo de  section de contacto */
+
+.custom-box{
+    position: relative;
+   
+}
+
+
+
+/* Media query */
+
+@media (max-width: 1024px) {
+    .contenedor-productos{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .contenedor_link a{
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .contenedor-productos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .producto{
+        max-width: 90%;
+    }
+
+    .producto img{
+        width: 80%; /* Que ocupe todo el contenedor */
+        height: auto;
+        max-height: 305px; /* Ajustá este valor si querés imágenes más grandes o chicas */
+
+    }
+
+    .contenedor_link a{
+        font-size: 17px;
+    }
+
+
+}
+
+
+@media (max-width: 768px){
+
+    .contenedor_link a{
+        font-size: 14px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* footer{
+    font-size: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+} */
