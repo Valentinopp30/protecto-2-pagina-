@@ -61,7 +61,6 @@ h1{
     font-size: 20px;
     font-weight: bold;
     transition: color 0,3s ease;
-    
 }
 
 ul{
@@ -83,38 +82,39 @@ section{
 
 
 .contenedor-productos{
-    min-height: 100vh; /* Para que ocupe todo el espacio disponible */   
+    min-height: 120vh;   
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 10px; 
     justify-items: center; 
     align-items: start;
-    max-width: 1600px; 
+    max-width: 1800px; 
     margin: auto;   
 
 }
 
 .producto{
-    width: 100%;
-    max-width: 400px; /* Máximo ancho de cada producto */   
     text-align: center;
+    width: 100%;
+    max-width: 400px; 
     padding: 15px;
     border: 1px solid black;
     border-radius: 8px;
-    background-color: rgb(152, 152, 152)
+    background-color: white;
+    
 }
 
 .producto img{
-    width: 100%; /* Que ocupe todo el contenedor */
+    width: 90%; 
     height: auto;
-    max-height: 200px; /* Ajustá este valor si querés imágenes más grandes o chicas */
+    max-height: 200px; 
     object-fit: cover;
     border-radius: 8px;
 }
 
 .producto button {
-    margin-top: 10px; /* Espaciado entre la imagen y el botón */
-    width: 100%; /* Para que ocupe todo el ancho del contenedor */
+    margin-top: 10px; 
+    width: 100%; 
 }
 
 
@@ -163,7 +163,102 @@ section{
 }
 
 
-/* Media query */
+/* Estilo de la section de sobre nosotros  */
+
+.sobre-nosotros{
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.contenedor{
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    gap: 50px;
+    
+}
+
+.seccion-historia{
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seccion-mision{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse;
+    
+}
+
+.texto{
+    flex: 1;
+    font-size: 17px;
+    font-family: "EB Garamond", serif;
+}
+
+.subtitulo-historia{
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.imagen{
+    /* Espacio y posiocion de las imagenes */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen img{
+    /* Tamaño de las imagenes */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+
+/* Estilo de la section de home/index */
+
+.imagen_carrusel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; 
+    background-color: black; 
+    
+   
+}
+
+.imagen_carrusel img{
+    max-height: 100%; 
+    width: auto;
+    object-fit: contain; 
+
+}
+
+
+.contenedor-productos-index{
+    min-height: 80vh;   
+    display: grid;
+    grid-template-columns: repeat(3, 3fr); 
+    justify-items: center; 
+    align-items: start;
+    max-width: 1600px; 
+    margin: auto;   
+
+}
+
+
+
+
+
+/* Media query de pagina de prodictos */
 
 @media (max-width: 1024px) {
     .contenedor-productos{
@@ -173,6 +268,11 @@ section{
 
     .contenedor_link a{
         font-size: 18px;
+    }
+
+    .contenedor-productos-index{
+        grid-template-columns: repeat(2, 1fr);
+        
     }
 
 }
@@ -188,9 +288,9 @@ section{
     }
 
     .producto img{
-        width: 80%; /* Que ocupe todo el contenedor */
+        width: 80%; 
         height: auto;
-        max-height: 305px; /* Ajustá este valor si querés imágenes más grandes o chicas */
+        max-height: 305px; 
 
     }
 
@@ -198,7 +298,10 @@ section{
         font-size: 17px;
     }
 
-
+    .contenedor-productos-index{
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
 }
 
 @media (max-width: 768px){
@@ -206,13 +309,13 @@ section{
     .contenedor_link a{
         font-size: 14px;
     }
-
-
 }
+
+/* Media query de pagina de preguntas frecuentes  */
 
 @media (max-width: 600px) {
     .faq-container {
-        padding: 10px; /* Reduce padding en pantallas pequeñas */
+        padding: 10px; 
     }
 
     .faq-container summary {
@@ -226,21 +329,35 @@ section{
     }
 }
 
+/* Media query de pagina de nuestra historia */
+
+@media (max-width: 768px) {
+    .seccion-historia, .seccion-mision {
+        flex-direction: column; /* Cambio de disposición a columna */
+        align-items: center; /* Centrado de contenido */
+    }
+
+    .texto {
+        font-size: 16px; /* Ajuste de tamaño de fuente */
+        text-align: center; /* Alineación centrada del texto */
+    }
+
+    .subtitulo-historia {
+        font-size: 30px; /* Ajuste de tamaño del título */
+    }
+
+    .imagen img {
+        max-width: 100%; /* Ajuste del tamaño de las imágenes */
+    }
+}
 
 
+@media (max-width: 480px) {
+    .subtitulo-historia {
+        font-size: 24px; /* Ajuste aún más pequeño del título */
+    }
 
-
-
-
-
-
-/* footer{
-    font-size: 30px;
-    text-align: center;
-    background-color: black;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
-} */
+    .texto {
+        font-size: 14px; /* Ajuste de tamaño de fuente */
+    }
+}
